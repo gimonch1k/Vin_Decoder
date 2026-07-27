@@ -1,0 +1,11 @@
+@use "../../styles/variables.scss" as *;
+
+.header {
+  padding: 25px 0;
+  &__main {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: $blue-main;
+  }
+}
