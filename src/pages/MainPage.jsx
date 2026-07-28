@@ -1,5 +1,11 @@
+import SearchPanel from "../components/searchPanel/SearchPanel";
+
 function MainPage() {
-  return <h1>main</h1>;
+  return (
+    <section>
+      <SearchPanel />
+    </section>
+  );
 }
 
 export default MainPage;

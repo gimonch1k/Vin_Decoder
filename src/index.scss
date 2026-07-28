@@ -17,6 +17,12 @@ dl {
   padding: 0;
 }
 
+input,
+label,
+button {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }

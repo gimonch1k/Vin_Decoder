@@ -1,0 +1,17 @@
+@use "./variables.scss" as *;
+
+@mixin btn {
+  padding: 10px 20px;
+  background-color: $blue-main;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: $white-main;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-4px) translateZ(0);
+  }
+}
