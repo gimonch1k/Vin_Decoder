@@ -1,9 +1,10 @@
 import Spinner from "../components/spinner/Spinner";
+import Skeleton from "../components/skeleton/Skeleton";
 
 function SetContent(process, Component, data) {
   switch (process) {
     case "idle":
-      return 1;
+      return <Skeleton />;
     case "loading":
       return <Spinner />;
     case "confirmed":

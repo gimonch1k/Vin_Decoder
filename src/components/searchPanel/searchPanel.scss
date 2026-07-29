@@ -32,6 +32,9 @@
   &__error {
     color: $red-main;
   }
+  &__success {
+    color: $green-main;
+  }
   &__btn {
     margin: 30px auto 0 auto;
     @include btn;

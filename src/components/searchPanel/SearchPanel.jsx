@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./searchPanel.scss";
 
@@ -9,6 +9,8 @@ function SearchPanel({
   setConfirmedProcess,
   getVehicleByVin,
 }) {
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -24,6 +26,18 @@ function SearchPanel({
       setConfirmedProcess("confirmed");
     });
   };
+
+  useEffect(() => {
+    if (process !== "confirmed") return;
+
+    setShowSuccess(true);
+
+    const timer = setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [process]);
 
   return (
     <form className="searchpanel" onSubmit={handleSubmit(onSubmit)}>
@@ -56,9 +70,7 @@ function SearchPanel({
           <div className="searchpanel__error">He правильний VIN-код</div>
         )}
 
-        {process === "confirmed" && (
-          <div className="searchpanel__success">Успішно</div>
-        )}
+        {showSuccess && <div className="searchpanel__success">Успішно</div>}
       </div>
 
       <button disabled={process === "loading"} className="searchpanel__btn">
