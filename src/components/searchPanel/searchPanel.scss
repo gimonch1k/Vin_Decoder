@@ -2,6 +2,7 @@
 @use "../../styles/btn.scss" as *;
 
 .searchpanel {
+  position: relative;
   width: 600px;
   margin: 0 auto;
   &__title {
@@ -9,15 +10,33 @@
     font-size: 22px;
     letter-spacing: 3px;
   }
+  &__symbols {
+    position: absolute;
+    font-size: 14px;
+    right: 60px;
+    top: 35px;
+  }
   &__vin {
     width: 500px;
-    margin: 20px auto 0 auto;
+    margin: 30px auto 0 auto;
     padding: 11px;
     border-radius: 10px;
     border: 2px solid $blue-main;
   }
+  &__messages {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 105px;
+  }
+  &__error {
+    color: $red-main;
+  }
   &__btn {
-    margin: 20px auto 0 auto;
+    margin: 30px auto 0 auto;
     @include btn;
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }

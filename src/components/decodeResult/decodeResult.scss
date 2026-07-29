@@ -1,0 +1,22 @@
+.decoderesult {
+  margin-top: 50px;
+  &__list {
+    margin: 30px auto 0 auto;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    padding: 5px;
+  }
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 3px;
+  }
+}

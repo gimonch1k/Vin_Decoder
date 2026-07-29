@@ -10,7 +10,14 @@ function useVinDecoder() {
       `${_apiBase}/vehicles/decodevin/${vin}?format=json`,
     );
 
-    return res.Results.filter((item) => item.Value);
+    return res.Results.filter(
+      (item) =>
+        item.Value !== null &&
+        item.Value !== "" &&
+        item.Variable !== "Error Code" &&
+        item.Variable !== "Additional Error Text" &&
+        item.Variable !== "Error Text",
+    );
   };
 
   return { process, setConfirmedProcess, getVehicleByVin };
