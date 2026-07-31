@@ -15,7 +15,7 @@ function VariablesList({ variables, process }) {
 function View({ data }) {
   const content = data.map((item) => (
     <li className="variableslist__item" key={item.ID}>
-      <Link className="variableslist__link">
+      <Link to={`/variables/${item.ID}`} className="variableslist__link">
         <div className="variableslist__text">{item.Name}</div>
         <div className="variableslist__text">ID:{item.ID}</div>
         <div className="variableslist__text">{item.GroupName}</div>

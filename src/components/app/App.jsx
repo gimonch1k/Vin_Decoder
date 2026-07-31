@@ -1,7 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 import Header from "../header/Header";
-import { MainPage, Page404, VariablesPage } from "../../pages/index";
+import {
+  MainPage,
+  Page404,
+  VariablesPage,
+  VariablePage,
+} from "../../pages/index";
 
 import "./app.scss";
 
@@ -13,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/variables" element={<VariablesPage />} />
+          <Route path="/variables/:id" element={<VariablePage />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
