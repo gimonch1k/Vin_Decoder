@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 import Header from "../header/Header";
-import { MainPage, Page404 } from "../../pages/index";
+import { MainPage, Page404, VariablesPage } from "../../pages/index";
 
 import "./app.scss";
 
@@ -12,6 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/variables" element={<VariablesPage />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>

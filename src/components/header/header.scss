@@ -2,10 +2,25 @@
 
 .header {
   padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &__main {
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 5px;
+    color: $blue-main;
+  }
+  &__link {
+    font-size: 22px;
+    color: $blue-main;
+  }
+  &__link.active {
+    color: $blue-secondary;
+  }
+  span {
+    margin: 0 10px 0 10px;
+    font-size: 22px;
     color: $blue-main;
   }
 }
