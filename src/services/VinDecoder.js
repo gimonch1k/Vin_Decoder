@@ -20,7 +20,20 @@ function useVinDecoder() {
     );
   };
 
-  return { process, setConfirmedProcess, getVehicleByVin };
+  const getVehicleVariablesList = async () => {
+    const res = await request(
+      `${_apiBase}/vehicles/getvehiclevariablelist?format=json`,
+    );
+
+    return res.Results;
+  };
+
+  return {
+    process,
+    setConfirmedProcess,
+    getVehicleByVin,
+    getVehicleVariablesList,
+  };
 }
 
 export default useVinDecoder;

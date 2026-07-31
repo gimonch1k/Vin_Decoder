@@ -1,10 +1,10 @@
-import SetContent from "../../utils/SetContent";
+import setContent from "../../utils/SetContent";
 
 import "./decodeResult.scss";
 
 function DecodeResult({ vehicle, process }) {
   return (
-    <div className="decoderesult">{SetContent(process, View, vehicle)}</div>
+    <div className="decoderesult">{setContent(process, View, vehicle)}</div>
   );
 }
 

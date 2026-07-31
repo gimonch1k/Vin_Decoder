@@ -27,7 +27,7 @@ function SearchPanel({ setVehicle, process, requestVehicle }) {
 
     const timer = setTimeout(() => {
       setShowSuccess(false);
-    }, 5000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [process]);
