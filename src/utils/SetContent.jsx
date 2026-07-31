@@ -10,7 +10,7 @@ function SetContent(process, Component, data) {
     case "confirmed":
       return <Component data={data} />;
     case "error":
-      return 2;
+      return null;
     default:
       throw new Error("Unexpected process state");
   }

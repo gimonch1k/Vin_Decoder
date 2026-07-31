@@ -3,28 +3,21 @@ import { useState, useEffect } from "react";
 
 import "./searchPanel.scss";
 
-function SearchPanel({
-  setVehicle,
-  process,
-  setConfirmedProcess,
-  getVehicleByVin,
-}) {
+function SearchPanel({ setVehicle, process, requestVehicle }) {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
     watch,
   } = useForm();
 
   const vin = watch("vin", "");
 
   const onSubmit = (data) => {
-    getVehicleByVin(data.vin).then((vehicle) => {
-      setVehicle(vehicle);
-      setConfirmedProcess("confirmed");
-    });
+    requestVehicle(data.vin);
   };
 
   useEffect(() => {
@@ -56,7 +49,11 @@ function SearchPanel({
           validate: (value) =>
             value.length === 17 || "VIN має скаладатись із 17 символів",
           onChange: (e) => {
-            e.target.value = e.target.value.toUpperCase().replace(/[IOQ]/g, "");
+            setValue(
+              "vin",
+              e.target.value.toUpperCase().replace(/[IOQ]/g, ""),
+              { shouldValidate: true },
+            );
           },
         })}
       />
