@@ -19,7 +19,7 @@ function View({ data, requestVehicle }) {
   const content = data.map((item, i) => (
     <li
       className="history__item"
-      key={i}
+      key={item.vin}
       onClick={() => requestVehicle(item.vin)}
     >
       <div className="history__text">{item.vin}</div>

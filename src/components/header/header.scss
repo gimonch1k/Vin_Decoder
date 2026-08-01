@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .header {
-  padding: 25px 0;
+  padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,5 +22,11 @@
     margin: 0 10px 0 10px;
     font-size: 22px;
     color: $blue-main;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 25px 0;
   }
 }

@@ -15,7 +15,7 @@ function Variable({ data }) {
         </div>
       </div>
       <Link to="/variables" className="variable__return">
-        Back to all
+        Повернутись
       </Link>
     </>
   );

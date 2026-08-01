@@ -23,3 +23,11 @@
     row-gap: 10px;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .variableslist {
+    &__item {
+      width: 400px;
+    }
+  }
+}

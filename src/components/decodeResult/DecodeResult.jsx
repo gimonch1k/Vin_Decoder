@@ -9,8 +9,8 @@ function DecodeResult({ vehicle, process }) {
 }
 
 function View({ data }) {
-  const content = data.map((item, i) => (
-    <li className="decoderesult__item" key={i}>
+  const content = data.map((item) => (
+    <li className="decoderesult__item" key={item.VariableId}>
       <div className="decoderesult__variable">{item.Variable}</div>
       <div className="decoderesult__value">{item.Value}</div>
     </li>
