@@ -49,6 +49,9 @@
 @media screen and (max-width: 670px) {
   .searchpanel {
     width: 400px;
+    &__symbols {
+      right: 10px;
+    }
   }
 }
 
