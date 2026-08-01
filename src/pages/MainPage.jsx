@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import useVinDecoder from "../services/VinDecoder";
 import SearchPanel from "../components/searchPanel/SearchPanel";
@@ -7,8 +7,16 @@ import History from "../components/history/History";
 
 function MainPage() {
   const [vehicle, setVehicle] = useState([]);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(() => {
+    const savedHistory = localStorage.getItem("history");
+    return savedHistory ? JSON.parse(savedHistory) : [];
+  });
+
   const { process, setConfirmedProcess, getVehicleByVin } = useVinDecoder();
+
+  useEffect(() => {
+    localStorage.setItem("history", JSON.stringify(history));
+  }, [history]);
 
   const requestVehicle = (vin) => {
     getVehicleByVin(vin).then((vehicle) => {
